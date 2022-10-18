@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Day 1 - Project 2</title>
+</head>
+<style>
+    table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th {
+        background-color: gray;
+    }
+    td {
+        text-align: left;
+        padding: 15px;
+    }
+    table {
+        padding: 30px;
+        margin: 20px 50px;
+        margin-bottom: 50px;
+        
+    }
+    img {
+        width: 150px;
+        padding: 10px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    #tr1 {
+        background-color: green;
+    }
+    #tr2 {
+        background-color: rgb(233, 39, 39);
+    }
+    #tr3 {
+        background-color: cyan;
+    }
+</style>
+
+<body>
+    <h1>Embedded Styling - My Table's</h1>
+
+    <h2>1. Table Hobby</h2>
+    <table>
+        <tr>
+          <th>Name of Hobbies</th>
+          <th>Category</th>
+          <th>Interest</th>
+          <th>Picture</th>
+        </tr>
+        <tr id="tr1">
+          <td>Badminton</td>
+          <td>Sport</td>
+          <td>Fully Interested</td>
+          <td><img src="/image/badminton.jpg" ></td>
+        </tr>
+        <tr>
+          <td>Playing console games</td>
+          <td>Entertainment</td>
+          <td>Normally Interested</td>
+          <td><img src="/image/games.jpg" ></td>
+        </tr>
+      </table>
+
+    <h2>2. Table Favorites Movies</h2>
+    <table>
+        <tr>
+          <th>Name of Movies</th>
+          <th>Release Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>IMDb Rating</th>
+          <th>Picture</th>
+        </tr>
+        <tr>
+          <td>Spirited Away</td>
+          <td>
+            Ten-year-old Chihiro and her parents end up at an abandoned amusement park inhabited by supernatural beings. Soon, she learns that she must work to free her parents who have been turned into pigs.
+          </td>
+          <td>2001</td>
+          <td>Fantasy/Adventure</td>
+          <td>8.6/10</td>
+          <td><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS6MveoDoJOg9-wMvtHE4ak_-HDZeYS1egb9PwRcf8lhrtcppMc" ></td>
+        </tr>
+
+        <tr id="tr2">
+            <td>Stranger Things</td>
+            <td>
+                In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries.
+            <td>2016</td>
+            <td>Mystery</td>
+            <td>8.7/10</td>
+            <td><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMDAxOTUyMV5BMl5BanBnXkFtZTgwNzAxMzYzOTE@._V1_.jpg" ></td>
+          </tr>
+      </table>
+
+    <h2>3. Table Favorite Song</h2>
+    <table>
+        <tr>
+          <th>Name of Song</th>
+          <th>Genre</th>
+          <th>Album</th>
+          <th>Release Date</th>
+          <th>Music Video</th>
+        </tr>
+        <tr>
+          <td>Itte - Yorushika</td>
+          <td>J-Pop</td>
+          <td>Natsukusa ga Jyama wo Suru</td>
+          <td>2017</td>
+          <td>
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/F64yFFnZfkI" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>The Beginning - ONE OK ROCK</td>
+          <td>J-Rock</td>
+          <td>Jinsei x Boku =</td>
+          <td>2013</td>
+          <td>
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/Hh9yZWeTmVM" title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+          </td>
+        </tr>
+        <tr id="tr3">
+            <td>Raise your Flag - Man with a Mission</td>
+            <td>J-Rock</td>
+            <td>The World's On Fire</td>
+            <td>2016</td>
+            <td>
+                <iframe width="400" height="300" src="https://www.youtube.com/embed/PiQpGzYMVos" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </td>
+          </tr>
+      </table>
+</body>
+</html>
