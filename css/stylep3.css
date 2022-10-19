@@ -1,0 +1,38 @@
+ h1 {
+  text-align: center;
+  background-color: rgb(108, 17, 17);
+  color: white;
+ }
+ 
+ .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    background-color: rgb(128, 139, 150);
+  }
+
+ .grid-item {
+    padding: 20px;
+    text-align: left;
+  }
+
+  #name {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  #kerja {
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  #lorem1 {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  #lorem2 {
+    font-size: larger;
+    font-weight: bold;
+  }
+
