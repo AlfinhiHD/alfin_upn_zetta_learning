@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: azure;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+p {
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    padding: 30px 10px;
+    width: 200px;
+    margin: 80px;
+    background-color: rgb(235, 111, 66);
+    border-radius: 25px;
+}
+
+.card img {
+    width: 200px;
+    height: 100px;
+}
+
+.card p::first-line {
+    color: black;
+}
+
+footer {
+    background-color: orange;
+    padding: 10px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
