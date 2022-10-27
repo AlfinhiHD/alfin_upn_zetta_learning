@@ -27,7 +27,10 @@ function bookpurchase (book, indc, intax, many) {
             console.log("");
             console.log("Jumlah buku yang dibeli : ",  many)
             console.log("Harga total : ", result )
+            console.log("------------------------------")
+            console.log("Kredit setiap bulannya : ", )
             console.groupEnd();
+            
     } else {
         console.log("Stock buku ini tidak mencukupi");
     }
@@ -35,5 +38,22 @@ function bookpurchase (book, indc, intax, many) {
     return result;
 }
 
-bookpurchase(book, 25, 10, 8);
+function creditPayment(priceBook, duration, interest) {
+    let totalcredit = 0;
+    
+    perMonth = priceBook / duration
+    const creditPrice = perMonth + (perMonth * (interest/100))
+    
+    for (let cur=0; cur<duration; cur++){
+        console.log(" Cicilan per bulan : " + (cur+1) + " " + creditPrice);
+        totalcredit += creditPrice;
+    }
+    console.log("------------------------------")
+    console.log(" Harga total : " + totalcredit);
+    console.log("------------------------------")
+    
+    return totalcredit;
+}
+
+creditPayment(bookpurchase(book, 25, 10, 8), 5, 10);
     
