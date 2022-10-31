@@ -1,0 +1,15 @@
+<div *ngFor="let card of listCards; let i = index;">
+    <div class="card" style="width: 18rem; margin-top: 3rem;">
+        <img class="card-img-top" src="{{ card.imageurl }}" alt="{{ card.name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ card.name }}</h5>
+            <p class="card-text">{{ card.about }}</p>
+            <p class="card-text"><span style="font-weight: bold;"> Location :</span> {{ card.place }}</p>
+            <!--<a href="{{ card.loc }}" class="btn btn-primary">Maps</a>-->
+        </div>
+    </div>
+</div>
+
+    
+
+
