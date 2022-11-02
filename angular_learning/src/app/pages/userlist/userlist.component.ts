@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-userlist',
+  selector: '[app-userlist]',
   templateUrl: './userlist.component.html',
   styleUrls: ['./userlist.component.css']
 })
@@ -11,12 +11,28 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Employee = [
-    { fname: 'Bima', lname: 'Tirta', age: '29', position: 'Web Developer', interest: 'Playing Cards'},
-    { fname: 'Sitti', lname: 'Aminah', age: '28', position: 'Web Developer', interest: 'Dancing'},
-    { fname: 'Idris', lname: 'Daud', age: '18', position: 'Mobile Developer', interest: 'Playing Basketball'},
-    { fname: 'Iman', lname: 'Hadijah', age: '21', position: 'Quality Assurance', interest: 'Playing Games'},
-    { fname: 'Bima', lname: 'Burhanuddin', age: '25', position: 'Project Manager', interest: 'Watching Anime'}
-  ]
+
+  @Input() i : number;
+  @Output('detailOutput') detailUser = new EventEmitter<{dtlFname: string, dtlLname: string, dtlAge: number, dtlPosition: string, dtlInterest: string}>();
+
+  @Input('user') list: {
+    fname: string;
+    lname: string;
+    age: number;
+    position: string;
+    interest: string;
+  }
+
+  showDetail() {
+    this.detailUser.emit({
+      dtlFname: this.list.fname,
+      dtlLname: this.list.lname,
+      dtlAge: this.list.age,
+      dtlPosition: this.list.position,
+      dtlInterest: this.list.interest,
+    })
+  }
+
+
 
 }

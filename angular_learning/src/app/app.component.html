@@ -2,7 +2,27 @@
 <br><br>
 
 <div class="container">
-    <app-userlist></app-userlist>
-    <h5>Input User</h5><br>
-    <app-adduser></app-adduser>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Position</th>
+                <th scope="col">Interest</th>
+                <th scope="col">For Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+            app-userlist *ngFor="let list of Employee; let i = index;" [user]="list" [i]="i"
+            (detailOutput)="detailUser($event)"
+            >
+            </tr>
+        </tbody>
+    </table>
+    <app-userdetails
+    *ngFor="let list of detailElements;"
+    (userDet)="detailElements"
+    ></app-userdetails>
 </div>
