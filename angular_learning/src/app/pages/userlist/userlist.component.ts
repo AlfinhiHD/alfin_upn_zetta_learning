@@ -12,11 +12,11 @@ export class UserlistComponent implements OnInit {
   ngOnInit(): void {
   }
   Employee = [
-    { name: 'Bima Tirta', age: '29', position: 'Web Developer', interest: 'Playing Cards'},
-    { name: 'Sitti Aminah', age: '28', position: 'Web Developer', interest: 'Dancing'},
-    { name: 'Idris Daud', age: '18', position: 'Mobile Developer', interest: 'Playing Basketball'},
-    { name: 'Iman Hadijah', age: '21', position: 'Quality Assurance', interest: 'Playing Games'},
-    { name: 'Bima Burhanuddin', age: '25', position: 'Project Manager', interest: 'Watching Anime'}
+    { fname: 'Bima', lname: 'Tirta', age: '29', position: 'Web Developer', interest: 'Playing Cards'},
+    { fname: 'Sitti', lname: 'Aminah', age: '28', position: 'Web Developer', interest: 'Dancing'},
+    { fname: 'Idris', lname: 'Daud', age: '18', position: 'Mobile Developer', interest: 'Playing Basketball'},
+    { fname: 'Iman', lname: 'Hadijah', age: '21', position: 'Quality Assurance', interest: 'Playing Games'},
+    { fname: 'Bima', lname: 'Burhanuddin', age: '25', position: 'Project Manager', interest: 'Watching Anime'}
   ]
 
 }
