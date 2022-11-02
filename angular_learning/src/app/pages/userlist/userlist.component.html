@@ -1,1 +1,20 @@
-<p>userlist works!</p>
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Position</th>
+        <th scope="col">Interest</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of Employee; let i = index;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{list.name}}</td>
+        <td>{{list.age}}</td>
+        <td>{{list.position}}</td>
+        <td>{{list.interest}}</td>
+      </tr>
+    </tbody>
+  </table>
