@@ -13,7 +13,7 @@ export class UserlistComponent implements OnInit {
   }
 
   @Input() i : number;
-  @Output('detailOutput') detailUser = new EventEmitter<{dtlFname: string, dtlLname: string, dtlAge: number, dtlPosition: string, dtlInterest: string}>();
+  @Output('detailOutput') detailUser = new EventEmitter<{dtlFname: string, dtlLname: string, dtlAge: number, dtlPosition: string, dtlInterest: string, dtlImage: string, dtlProfil: string}>();
 
   @Input('user') list: {
     fname: string;
@@ -21,6 +21,8 @@ export class UserlistComponent implements OnInit {
     age: number;
     position: string;
     interest: string;
+    img: string;
+    profil: string;
   }
 
   showDetail() {
@@ -30,6 +32,8 @@ export class UserlistComponent implements OnInit {
       dtlAge: this.list.age,
       dtlPosition: this.list.position,
       dtlInterest: this.list.interest,
+      dtlImage: this.list.img,
+      dtlProfil: this.list.profil
     })
   }
 

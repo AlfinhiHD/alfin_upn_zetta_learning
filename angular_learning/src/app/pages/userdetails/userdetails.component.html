@@ -1,11 +1,11 @@
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="{{list.image}}"  class="img-fluid rounded-start" alt="{{list.fname}}">
+        <img class="img-fluid rounded-start" src="{{ list.img }}"  alt="{{list.fname}}">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{list.fname}}</h5>
+          <h5 class="card-title">{{list.fname}} {{list.lname}}</h5>
           <p class="card-text">{{list.profil}}</p>
           <p class="card-text">{{list.position}}</p>
         </div>
