@@ -16,17 +16,30 @@ export class AppComponent {
   detailElements = []
 
   detailUser(detailInfo:{dtlFname: string, dtlLname: string, dtlAge: number, dtlPosition: string, dtlInterest: string, dtlImage: string, dtlProfil: string}){
-    this.detailElements.push({
-      fname: detailInfo.dtlFname,
-      lname: detailInfo.dtlLname,
-      age: detailInfo.dtlAge,
-      position: detailInfo.dtlPosition,
-      interest: detailInfo.dtlInterest,
-      img: detailInfo.dtlImage,
-      profil: detailInfo.dtlProfil
-    })
+    if (this.detailElements.length === 0 ) {
+      this.detailElements.push({
+        fname: detailInfo.dtlFname,
+        lname: detailInfo.dtlLname,
+        age: detailInfo.dtlAge,
+        position: detailInfo.dtlPosition,
+        interest: detailInfo.dtlInterest,
+        img: detailInfo.dtlImage,
+        profil: detailInfo.dtlProfil
+      })
+    }
+    else {
+      this.detailElements.pop()
+      this.detailElements.push({
+        fname: detailInfo.dtlFname,
+        lname: detailInfo.dtlLname,
+        age: detailInfo.dtlAge,
+        position: detailInfo.dtlPosition,
+        interest: detailInfo.dtlInterest,
+        img: detailInfo.dtlImage,
+        profil: detailInfo.dtlProfil
+      })
+    }  
     console.log(this.detailElements)
   }
-
 
 }
