@@ -7,18 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  @Input('userDet') list2: {
+  @Input('userDet') list: {
     fname: string;
     lname: string;
     age: number;
     position: string;
     interest: string;
+    img: string;
+    profil: string;
   }
-  
 
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log(this.list)
+  }
+
+ 
+
+  
+  
 }

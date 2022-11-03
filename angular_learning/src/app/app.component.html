@@ -23,6 +23,6 @@
     </table>
     <app-userdetails
     *ngFor="let list of detailElements;"
-    (userDet)="detailElements"
+    [userDet]="list"
     ></app-userdetails>
 </div>
