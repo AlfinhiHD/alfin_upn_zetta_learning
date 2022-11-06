@@ -7,11 +7,6 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class UserlistComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   @Input() i : number;
   @Output('detailOutput') detailUser = new EventEmitter<{dtlFname: string, dtlLname: string, dtlAge: number, dtlPosition: string, dtlInterest: string, dtlImage: string, dtlProfil: string}>();
 
@@ -23,6 +18,11 @@ export class UserlistComponent implements OnInit {
     interest: string;
     img: string;
     profil: string;
+  }
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
   showDetail() {
