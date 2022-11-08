@@ -1,4 +1,15 @@
 <div class="container">
-  <p> Test Bootstrap</p>
-  <h1>Halo!</h1>
+  <app-addlist (todoCreated)="onTodoAdded($event)" (imC)="onImportantAdded($event)"></app-addlist>
+  <div class="">
+    <div class="">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change First element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First element</button>
+      <hr>
+      <h3>List of To Do</h3>
+      <app-list-element *ngFor="let list of todoElements" [todoElement]="list" [name]="list.name">
+            <strong *ngIf="list.type === 'important'" style="color: red">{{ list.content }}</strong>
+            <em *ngIf="list.type === 'normal'">{{ list.content }}</em>
+      </app-list-element>
+    </div>
+  </div>
 </div>
