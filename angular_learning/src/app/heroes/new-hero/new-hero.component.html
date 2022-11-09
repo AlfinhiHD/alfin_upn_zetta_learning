@@ -1,12 +1,11 @@
-<div class="row">
+<div class="mt-5">
+  <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="form-group">
         <label>Hero Name</label>
-        <input
-          type="text"
-          class="form-control"
-          #heroName>
+        <input type="text" class="form-control" #heroName>
       </div>
+      <br>
       <div class="form-group">
         <select class="form-control" #status>
           <option value="superhero">Superhero</option>
@@ -14,14 +13,15 @@
           <option value="villain">Villain</option>
         </select>
       </div>
-      <button
-        class="btn btn-primary"
-        (click)="onCreateHero(heroName.value, status.value)">
+      <br>
+      <button class="btn btn-primary" (click)="onCreateHero(heroName.value, status.value)">
         Add Hero
       </button>
     </div>
+  </div>
 </div>
-  
+
+
 <!-- <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Enter hero name</mat-label>

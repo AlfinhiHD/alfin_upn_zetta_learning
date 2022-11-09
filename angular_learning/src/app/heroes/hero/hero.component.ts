@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { HeroService } from '../hero.service';
-import { LoggingService } from '../logging.service';
+import { HeroService } from '../../hero.service';
+import { LoggingService } from '../../logging.service';
 
 @Component({
   selector: 'app-hero',

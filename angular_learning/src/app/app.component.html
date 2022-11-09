@@ -1,13 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <app-new-hero></app-new-hero>
-      <hr>
-      <app-hero
-        *ngFor="let hero of heroes; let i = index"
-        [hero]="hero"
-        [id]="i"
-        ></app-hero>
-    </div>
-  </div>
-</div>
+<!-- <mat-tab-group>
+  <mat-tab label="Home"><a [routerLink]="['/home']"></a> </mat-tab>
+  <mat-tab label="Heroes!"><a [routerLink]="['/heroes']"></a> </mat-tab>
+</mat-tab-group> -->
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <a mat-tab-link *ngFor="let link of links"
+     (click)="route(link)"
+     [active]="activeLink == link.name"> {{link.name}} </a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+<router-outlet></router-outlet>
+
+
