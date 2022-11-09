@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <h5>{{ hero.name }}</h5>
+    <mat-card>
+      <h2>{{ hero.name }}</h2>
       <hr>
-      <p>This account is {{ hero.status }}</p>
-      <button class="btn btn-default" (click)="onSetTo('superhero')">Set to 'superhero'</button>
-      <button class="btn btn-default" (click)="onSetTo('netral')">Set to 'netral'</button>
-      <button class="btn btn-default" (click)="onSetTo('villain')">Set to 'villain'</button>
-    </div>
-  </div>
+      <p>Type of this hero is {{ hero.status }}</p>
+      <button mat-button (click)="onSetTo('superhero')">Set to 'superhero'</button>
+      <button mat-button (click)="onSetTo('netral')">Set to 'netral'</button>
+      <button mat-button (click)="onSetTo('villain')">Set to 'villain'</button>
+    </mat-card>
+</div>
   
   
