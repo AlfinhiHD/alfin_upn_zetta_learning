@@ -19,8 +19,8 @@ export class NewHeroComponent {
       )
     }
 
-  onCreateHero(heroName: string, heroStatus: string) {
-    this.heroService.addHero(heroName, heroStatus);
+  onCreateHero(heroName: string, heroStatus: string, heroImg: string, heroDet: string) {
+    this.heroService.addHero(heroName, heroStatus,  heroImg, heroDet);
     // this.loggingService.logStatusChange(accountStatus);
   }
 }

@@ -4,6 +4,10 @@
       <div class="form-group">
         <label>Hero Name</label>
         <input type="text" class="form-control" #heroName>
+        <label>Hero Detail</label>
+        <input type="text" class="form-control" #heroDet>
+        <label>Hero Image Url</label>
+        <input type="text" class="form-control" #heroImg>
       </div>
       <br>
       <div class="form-group">
@@ -14,7 +18,12 @@
         </select>
       </div>
       <br>
-      <button class="btn btn-primary" (click)="onCreateHero(heroName.value, status.value)">
+      <button class="btn btn-primary" (click)="onCreateHero(
+        heroName.value,
+        status.value,
+        heroImg.value,
+        heroDet.value
+        )">
         Add Hero
       </button>
     </div>

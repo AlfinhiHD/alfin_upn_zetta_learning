@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HomeComponent } from './home/home.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './heroes/hero/hero-detail/hero-detail.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HeroesComponent } from './heroes/heroes.component';
     HeroComponent,
     NewHeroComponent,
     HomeComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,

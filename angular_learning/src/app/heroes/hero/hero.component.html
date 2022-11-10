@@ -1,12 +1,19 @@
 <div class="row">
-    <mat-card>
-      <h2>{{ hero.name }}</h2>
-      <hr>
-      <p>Type of this hero is {{ hero.status }}</p>
+
+  <mat-card>
+    <h2>{{ hero.name }}</h2>
+    <hr>
+    <p>Type of this hero is {{ hero.status }}</p>
+    <mat-card-actions>
       <button mat-button (click)="onSetTo('superhero')">Set to 'superhero'</button>
       <button mat-button (click)="onSetTo('netral')">Set to 'netral'</button>
       <button mat-button (click)="onSetTo('villain')">Set to 'villain'</button>
-    </mat-card>
+    </mat-card-actions>
+    <mat-card-actions align="end">
+      <button mat-button
+        [routerLink]="['/heroes/hero',hero.name]"
+      >Details</button>
+    </mat-card-actions>
+  </mat-card>
+
 </div>
-  
-  
