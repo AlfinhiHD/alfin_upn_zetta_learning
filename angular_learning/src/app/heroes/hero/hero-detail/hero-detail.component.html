@@ -1,1 +1,10 @@
-<p>hero-detail works!</p>
+<mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{hero.name}}</mat-card-title>
+      <mat-card-subtitle>{{hero.status}}</mat-card-subtitle>
+      <img mat-card-xl-image src="{{hero.img}}" >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{hero.det}}
+    </mat-card-content>
+</mat-card>

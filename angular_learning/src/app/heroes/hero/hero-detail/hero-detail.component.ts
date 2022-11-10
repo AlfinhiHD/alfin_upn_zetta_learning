@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { HeroService } from 'src/app/hero.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class HeroDetailComponent implements OnInit {
     }
     this.route.params
       .subscribe(
-        (params) => {
+        (params: Params) => {
           this.hero.name = params['name'],
           this.hero.status = this.temp[this.i].status,
           this.hero.img = this.temp[this.i].img,
