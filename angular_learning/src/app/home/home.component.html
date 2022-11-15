@@ -1,0 +1,9 @@
+<div class="nav">
+    <button class="btn btn-primary" [routerLink]="['/add-user']">ADD USER</button>
+</div>
+<div class="d-flex justify-content-around cards mx-auto flex-wrap">
+    <app-users
+        *ngFor="let list of userList; let i = index"
+        [userList]="list"
+    ></app-users>
+</div>
