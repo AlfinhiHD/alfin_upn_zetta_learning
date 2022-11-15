@@ -1,11 +1,13 @@
-<div class="container">
     <mat-card>
-        <mat-card-title>ADD USER</mat-card-title>
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <h1>ADD USER</h1>
+        <mat-divider></mat-divider>
+        <br>
+        <form class="userform" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <mat-card-title>User Data</mat-card-title>
             <mat-form-field appearance="fill" class="form-group">
                 <mat-label>Enter your ID Number</mat-label>
-                <input matInput type="text" placeholder="ID Number" formControlName="id">
                 <mat-icon matSuffix>account_circle</mat-icon>
+                <input matInput type="text" placeholder="" formControlName="id">
                 <!-- <mat-error *ngIf="!signupForm.get('id').valid && signupForm.get('id').touched">
                     Please enter a valid ID Number
                 </mat-error> -->
@@ -26,8 +28,8 @@
             </mat-form-field>
             <div class="radio-group">
                 <label class="me-3">Gender :</label>
-                <mat-radio-group class="radio" formControlName="gender" *ngFor="let gender of genders">
-                    <mat-radio-button [value]="gender" class="med-3">{{gender}}</mat-radio-button>
+                <mat-radio-group class="radio" formControlName="gender">
+                    <mat-radio-button  *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-radio-button>
                 </mat-radio-group>
             </div><br>
             <mat-form-field appearance="fill" class="form-group">
@@ -56,8 +58,6 @@
             </mat-form-field>
             <mat-divider></mat-divider>
             <br>
-
-            <mat-card>
                 <mat-card-title>Address</mat-card-title>
                 <div formGroupName="addresses">
                     <mat-form-field appearance="fill" class="form-group">
@@ -90,14 +90,12 @@
                         </mat-error> -->
                     </mat-form-field>
                 </div>
-            </mat-card>
             <mat-divider></mat-divider>
             <br>
-            <span *ngIf="!signupForm.valid && signupForm.touched" class="fw-bold">
+            <span *ngIf="!signupForm.valid && signupForm.touched" class="errors">
                 Check your data before submit!
             </span>
             <br>
             <button mat-raised-button color="primary" type="submit">Submit Data</button>
         </form>
     </mat-card>
-</div>

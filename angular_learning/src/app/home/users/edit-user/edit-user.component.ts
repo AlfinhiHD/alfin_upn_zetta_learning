@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class EditUserComponent implements OnInit {
   signupForm: FormGroup;
-  userData: {
+  userEdit: {
     id: string,
     username: string,
     age: number,
@@ -25,9 +25,19 @@ export class EditUserComponent implements OnInit {
   }
   genders = ['Male', 'Female']
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, 
+    private router: Router, 
+    private route: ActivatedRoute) {}
+  
+  
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.userEdit = this.userService.getUser(this.userService.userData.findIndex(item => {
+        return item.id === params['id']
+      }))
+  })
+
     this.signupForm = new FormGroup({
       'id': new FormControl(null, Validators.required),
       'username': new FormControl(null, Validators.required),
@@ -46,7 +56,7 @@ export class EditUserComponent implements OnInit {
     })
   }
   onEdit() {
-    this.userData = {
+    this.userEdit = {
       id: this.signupForm.value.id,
       username: this.signupForm.value.username,
       age: this.signupForm.value.age,
@@ -59,7 +69,7 @@ export class EditUserComponent implements OnInit {
       city: this.signupForm.value.addresses.city,
       country: this.signupForm.value.addresses.country
     }
-    this.userService.editUser(this.userData)
+    this.userService.editUser(this.userEdit)
     this.router.navigate([''])
   }
 }

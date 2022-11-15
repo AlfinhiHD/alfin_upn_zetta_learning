@@ -1,9 +1,9 @@
-.card-width{
-    margin-left: 35vw;
-    width: 400px;
+mat-card {
+    width: 35%;
+    margin: auto;
 }
 
-h1, h4 {
+h1 {
+    text-align: center;
     font-weight: bold;
-    letter-spacing: 3px;
 }

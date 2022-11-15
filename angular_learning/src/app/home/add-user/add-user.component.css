@@ -1,8 +1,33 @@
-.nav {
-    float: right;
-    margin-right: 5vw;
+
+.mat-card {
+    width: 50%;
+    margin: auto;
 }
-.cards{
-    width: 60vw;
-    margin-top: 10vh;
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
 }
+
+.userform {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.errors {
+    font-weight: bolder;
+}
+
+button {
+    margin-top: 25px;
+}
+
+mat-radio-button {
+    margin: 5px;
+}
+  
+
+
