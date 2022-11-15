@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  userList: {
+    id: string,
+    username: string,
+    age: number,
+    email: string,
+    gender: string,
+    position: string,
+    maritalStatus: string,
+    address: string,
+    zipcode: number,
+    city: string,
+    country: string
+  }[] = []
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.userList = this.userService.userData
   }
 
 }
