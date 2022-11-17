@@ -35,7 +35,7 @@ export class AddUserComponent implements OnInit {
       gender: [null ,Validators.required],
       position: [null,Validators.required],
       maritalStatus: [null, Validators.required],
-      addressData: this.formBuilder.array([])
+      addresses: this.formBuilder.array([])
     })
   }
 
@@ -56,18 +56,18 @@ export class AddUserComponent implements OnInit {
   }
 
   get getAddressData() {
-    return this.signupForm.get('addressData') as FormArray
+    return this.signupForm.get('addresses') as FormArray
   }
 
   onAddAddresses(){
-    const addresses = this.formBuilder.group({
+    const addressProp = this.formBuilder.group({
       address: [null, Validators.required],
       zipcode: [null, Validators.required],
       city: [null, Validators.required],
       country: [null, Validators.required]
     })
 
-    this.getAddressData.push(addresses)
+    this.getAddressData.push(addressProp)
   }
 
   onDeleteAddresses(i: any){

@@ -54,7 +54,7 @@
         <br>
         <mat-card-title>Address</mat-card-title>
         <button mat-raised-button color="primary" (click)="onAddAddresses">Add Your Address</button>
-        <div formArrayName="addressData">
+        <div formArrayName="addresses">
             <div *ngFor="let addressList of getAddressData.controls; let i = index" [formGroupName]="i">
                 <h3> Your Number-{{i+1}} Address</h3>
                 <mat-form-field appearance="fill" class="form-group">
