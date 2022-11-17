@@ -3,12 +3,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 
+
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+  
   signupForm: FormGroup;
   userEdit: {
     id: string,
@@ -29,13 +31,13 @@ export class EditUserComponent implements OnInit {
     private router: Router, 
     private route: ActivatedRoute) {}
   
-  
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.userEdit = this.userService.getUser(this.userService.userData.findIndex(item => {
         return item.id === params['id']
       }))
+      console.log(this.userEdit)
   })
 
     this.signupForm = new FormGroup({
@@ -57,7 +59,7 @@ export class EditUserComponent implements OnInit {
   }
   onEdit() {
     this.userEdit = {
-      id: this.signupForm.value.id,
+      id: this.userEdit.id,
       username: this.signupForm.value.username,
       age: this.signupForm.value.age,
       email: this.signupForm.value.email,
@@ -70,6 +72,12 @@ export class EditUserComponent implements OnInit {
       country: this.signupForm.value.addresses.country
     }
     this.userService.editUser(this.userEdit)
+    console.log(this.userEdit)
     this.router.navigate([''])
   }
+
 }
+
+
+
+
