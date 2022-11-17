@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 
@@ -18,33 +18,27 @@ export class AddUserComponent implements OnInit {
     gender: string,
     position: string,
     maritalStatus: string,
-    address: string,
-    zipcode: number,
-    city: string,
-    country: string
+    addresses: any
   }
   genders = ['Male', 'Female']
 
-  constructor(private userService: UserService, private router: Router ) { }
+  constructor(private userService: UserService, 
+    private router: Router,
+    private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
-    this.signupForm = new FormGroup({
-      'id': new FormControl(null, Validators.required),
-      'username': new FormControl(null, Validators.required),
-      'age': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'gender': new FormControl(null ,Validators.required),
-      'position': new FormControl(null,Validators.required),
-      'maritalStatus': new FormControl(null, Validators.required),
-
-      'addresses': new FormGroup({
-        'address': new FormControl(null, Validators.required),
-        'zipcode': new FormControl(null, Validators.required),
-        'city': new FormControl(null, Validators.required),
-        'country': new FormControl(null, Validators.required),
-      }),
+    this.signupForm = this.formBuilder.group({
+      id: [null, Validators.required],
+      username: [null, Validators.required],
+      age: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      gender: [null ,Validators.required],
+      position: [null,Validators.required],
+      maritalStatus: [null, Validators.required],
+      addressData: this.formBuilder.array([])
     })
   }
+
   onSubmit(){
     this.userData = {
       id: this.signupForm.value.id,
@@ -54,15 +48,33 @@ export class AddUserComponent implements OnInit {
       gender: this.signupForm.value.gender,
       position: this.signupForm.value.position,
       maritalStatus: this.signupForm.value.maritalStatus,
-      address: this.signupForm.value.addresses.address,
-      zipcode: this.signupForm.value.addresses.zipcode,
-      city: this.signupForm.value.addresses.city,
-      country: this.signupForm.value.addresses.country
+      addresses: this.signupForm.value.addresses
     }
     if(this.userService.addUser(this.userData) === 1){
       this.router.navigate([''])
     }
   }
+
+  get getAddressData() {
+    return this.signupForm.get('addressData') as FormArray
+  }
+
+  onAddAddresses(){
+    const addresses = this.formBuilder.group({
+      address: [null, Validators.required],
+      zipcode: [null, Validators.required],
+      city: [null, Validators.required],
+      country: [null, Validators.required]
+    })
+
+    this.getAddressData.push(addresses)
+  }
+
+  onDeleteAddresses(i: any){
+    this.getAddressData.removeAt(i)
+  }
+
+  
 
 
 }

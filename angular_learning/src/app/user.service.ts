@@ -13,11 +13,21 @@ export class UserService {
       gender: 'Male',
       position: 'Web Developer',
       maritalStatus: 'Single',
-      address: 'Perumnas',
-      zipcode: 334422,
-      city: 'Yogyakarta',
-      country: 'Indonesia'
+      addresses: [
+      {
+        address: 'Perumnas',
+        zipcode: 334422,
+        city: 'Yogyakarta',
+        country: 'Indonesia'
+      },
+      {
+        address: 'Banjarnegara',
+        zipcode: 334422,
+        city: 'Banjarnegara',
+        country: 'Indonesia'
+      }]      
     },
+
     {
       id: 'MD1',
       username: 'Himawati',
@@ -26,12 +36,22 @@ export class UserService {
       gender: 'Female',
       position: 'Mobile Developer',
       maritalStatus: 'Married',
-      address: 'Pogung',
-      zipcode: 321123,
-      city: 'Yogyakarta',
-      country: 'Indonesia'
+      addresses: [
+      {
+        address: 'Pogung',
+        zipcode: 321123,
+        city: 'Yogyakarta',
+        country: 'Indonesia'
+      },
+      {
+        address: 'Banjarnegara',
+        zipcode: 334422,
+        city: 'Banjarnegara',
+        country: 'Indonesia'
+      }]     
     }
   ]
+
 
   msg : number
 
@@ -58,10 +78,10 @@ export class UserService {
           this.userData[index].email = param.email,
           this.userData[index].position = param.position,
           this.userData[index].maritalStatus = param.maritalStatus,
-          this.userData[index].address = param.address,
-          this.userData[index].zipcode = param.zipcode,
-          this.userData[index].city = param.city,
-          this.userData[index].country = param.country
+          this.userData[index].addresses = param.addresses
+          // this.userData[index].zipcode = param.zipcode,
+          // this.userData[index].city = param.city,
+          // this.userData[index].country = param.country
       }
     }
   }

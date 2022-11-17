@@ -17,10 +17,12 @@ export class DetailUserComponent implements OnInit {
     gender: string,
     position: string,
     maritalStatus: string,
-    address: string,
-    zipcode: number,
-    city: string,
-    country: string
+    addresses: {
+      address: string,
+      zipcode: number,
+      city: string,
+      country: string
+    }[] 
   }
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }

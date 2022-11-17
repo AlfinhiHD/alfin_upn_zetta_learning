@@ -13,11 +13,15 @@
         <p>Gender : {{ userSelected.gender }}</p>
         <p>Position : {{ userSelected.position }}</p>
         <hr>
-        <h2>Address : </h2>
-        <p>Address : {{ userSelected.address }}</p>
-        <p>Gender : {{ userSelected.gender }}</p>
-        <p>City : {{ userSelected.city }}</p>
-        <p>Country : {{ userSelected.country }}</p>
+        <h2>Addresses</h2>
+        <div *ngFor="let list of userSelected.addresses; let i = index">
+            <br>
+            <h3>Address No-{{i+1}} : </h3>
+            <p>Address : {{ list.address }}</p>
+            <p>Gender : {{ list.zipcode }}</p>
+            <p>City : {{ list.city }}</p>
+            <p>Country : {{ list.country }}</p>
+        </div>
     </mat-card-content>
     <br>
     <mat-card-actions>

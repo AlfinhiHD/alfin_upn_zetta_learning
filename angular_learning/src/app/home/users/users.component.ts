@@ -17,10 +17,7 @@ export class UsersComponent implements OnInit {
     gender: string,
     position: string,
     maritalStatus: string,
-    address: string,
-    zipcode: number,
-    city: string,
-    country: string
+    addresses: any
   }
   
   constructor(private userService: UserService, private router: Router) { }
