@@ -48,21 +48,6 @@ export class UserService {
   }
 
   editUser(param: any) {
-    // console.log(param)
-    // const temp = this.userData.map(item => item.id).indexOf(param.id);
-    // console.log(temp)
-    // if(temp !== -1){
-    //   this.userData[temp].username = param.username
-    //   this.userData[temp].age = param.age
-    //   this.userData[temp].email = param.email
-    //   this.userData[temp].gender = param.gender
-    //   this.userData[temp].position = param.position
-    //   this.userData[temp].maritalStatus = param.maritalStatus
-    //   this.userData[temp].address = param.address
-    //   this.userData[temp].zipcode = param.zipcode
-    //   this.userData[temp].city = param.city
-    //   this.userData[temp].country = param.country
-
     console.log(param.id)
     for (let index = 0; index < this.userData.length; index++) {
       if (this.userData[index].id == param.id) {
@@ -78,9 +63,7 @@ export class UserService {
           this.userData[index].city = param.city,
           this.userData[index].country = param.country
       }
-
     }
-
   }
 
   getUser(index: any){
