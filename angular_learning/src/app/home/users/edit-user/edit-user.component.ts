@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import { __param } from 'tslib';
 
 
 @Component({
@@ -39,15 +40,17 @@ export class EditUserComponent implements OnInit {
   })
 
     this.signupForm = this.formBuilder.group({
-      id: [null, Validators.required],
-      username: [null, Validators.required],
-      age: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      gender: [null ,Validators.required],
-      position: [null,Validators.required],
-      maritalStatus: [null, Validators.required],
+      id: [this.userEdit.id, Validators.required],
+      username: [this.userEdit.username, Validators.required],
+      age: [this.userEdit.age, Validators.required],
+      email: [this.userEdit.email, [Validators.required, Validators.email]],
+      gender: [this.userEdit.gender,Validators.required],
+      position: [this.userEdit.position,Validators.required],
+      maritalStatus: [this.userEdit.maritalStatus, Validators.required],
       addresses: this.formBuilder.array([])
     })
+
+    this.onAddAddresses(this.userEdit.addresses)
   }
   onEdit() {
     this.userEdit = {
@@ -69,15 +72,16 @@ export class EditUserComponent implements OnInit {
     return this.signupForm.get('addresses') as FormArray
   }
 
-  onAddAddresses(){
-    const addressProp = this.formBuilder.group({
-      address: [null, Validators.required],
-      zipcode: [null, Validators.required],
-      city: [null, Validators.required],
-      country: [null, Validators.required]
-    })
-
-    this.getAddressData.push(addressProp)
+  onAddAddresses(index: any){
+    for(let i=0; i < index.length; i++){
+      const addressProp = this.formBuilder.group({
+        address: [index[i].address, Validators.required],
+        zipcode: [index[i].zipcode, Validators.required],
+        city: [index[i].city, Validators.required],
+        country: [index[i].country, Validators.required]
+      })
+      this.getAddressData.push(addressProp)
+    } 
   }
 
   onDeleteAddresses(i: any){

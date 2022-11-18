@@ -6,7 +6,14 @@
             <h2>{{userEdit.username}} | {{userEdit.id}}</h2>
             <mat-divider></mat-divider>
         <mat-form-field appearance="fill" class="form-group">
-            <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-label>Your ID</mat-label>
+                <input matInput type="text" formControlName="id" readonly>
+                <!-- <mat-error *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+                    Please enter a valid Username
+                </mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-group">
             <mat-label>Change your Username</mat-label>
             <input matInput type="text" placeholder="Username" formControlName="username">
             <!-- <mat-error *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
@@ -53,10 +60,10 @@
         <mat-divider></mat-divider>
         <br>
         <mat-card-title>Address</mat-card-title>
-        <button mat-raised-button color="primary" (click)="onAddAddresses">Add Your Address</button>
         <div formArrayName="addresses">
             <div *ngFor="let addressList of getAddressData.controls; let i = index" [formGroupName]="i">
-                <h3> Your Number-{{i+1}} Address</h3>
+                <br>
+                <h3> No.{{i+1}} Address</h3>
                 <mat-form-field appearance="fill" class="form-group">
                     <mat-label>Enter your Address</mat-label>
                     <input matInput type="text" placeholder="Address" formControlName="address">
@@ -86,7 +93,7 @@
                         Please enter a valid Country
                     </mat-error> -->
                 </mat-form-field>
-                <button mat-raised-button color="primary" (click)="onDeleteAddresses(i)">Remove Your Addresses</button>
+                <button mat-raised-button color="warn" (click)="onDeleteAddresses(i)">Remove This Addresses</button>
             </div>
         </div>
         <mat-divider></mat-divider>
@@ -94,7 +101,6 @@
         <span *ngIf="!signupForm.valid && signupForm.touched" class="errors">
             Check your data before submit!
         </span>
-        <br>
         <button mat-raised-button color="primary" type="submit">Submit Data</button>
     </form>
 </mat-card>
