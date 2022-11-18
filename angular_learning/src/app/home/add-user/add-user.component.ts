@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 
@@ -29,8 +29,8 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       id: [null, Validators.required],
-      username: [null, Validators.required],
-      age: [null, Validators.required],
+      username: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      age: [null, [Validators.required, Validators.min(10)]],
       email: [null, [Validators.required, Validators.email]],
       gender: [null ,Validators.required],
       position: [null,Validators.required],
