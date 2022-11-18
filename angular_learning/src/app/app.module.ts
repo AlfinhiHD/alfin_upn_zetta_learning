@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialExampleModule } from 'src/material.module'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { searchingPipe } from './searching.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddUserComponent,
     UsersComponent,
     EditUserComponent,
-    DetailUserComponent
+    DetailUserComponent,
+    searchingPipe
   ],
   imports: [
     BrowserModule,

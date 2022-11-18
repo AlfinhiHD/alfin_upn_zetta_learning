@@ -9,7 +9,7 @@ export class UserService {
   userData = [
     {
       id: 'WD1',
-      username: 'Alfin',
+      username: 'Alfinhi Hajid',
       age: 19,
       email: 'alfin@email.com',
       gender: 'Male',

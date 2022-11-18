@@ -1,6 +1,13 @@
 <button class="btn btn-primary" [routerLink]="['/add-user']">ADD USER</button>
 
+<div class="d-flex justify-content-center mt-4">
+    <mat-form-field class="example-full-width">
+        <mat-label>Search Username</mat-label>
+        <input matInput [(ngModel)]="searchPipes">
+    </mat-form-field>
+</div>
+
 <h2>List of Users</h2>
 <div class="list">
-    <app-users *ngFor="let list of userList; let i = index"[userList]="list"></app-users>
+    <app-users *ngFor="let list of userList |  searchPipe : searchPipes; let i = index"[userList]="list"></app-users>
 </div>
