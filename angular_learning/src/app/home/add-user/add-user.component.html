@@ -1,7 +1,6 @@
 <mat-card>
     <h1>ADD USER</h1>
-    <mat-divider></mat-divider>
-    <br>
+    <mat-divider></mat-divider><br>
     <form class="userform" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <mat-card-title>User Data</mat-card-title>
         <mat-form-field appearance="fill" class="form-group">
@@ -108,6 +107,6 @@
             Check your data before submit!
         </span>
         <br>
-        <button mat-raised-button color="primary" type="submit">Submit Data</button>
+        <button mat-raised-button color="primary" [disabled]="!signupForm.valid" type="submit">Submit Data</button>
     </form>
 </mat-card>

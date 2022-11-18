@@ -105,6 +105,7 @@
         <span *ngIf="!signupForm.valid && signupForm.touched" class="errors">
             Check your data before submit!
         </span>
-        <button mat-raised-button color="primary" type="submit">Submit Data</button>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="!signupForm.valid" type="submit">Submit Data</button>
     </form>
 </mat-card>

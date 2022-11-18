@@ -42,7 +42,7 @@ export class EditUserComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       id: [this.userEdit.id, Validators.required],
       username: [this.userEdit.username, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
-      age: [this.userEdit.age, [Validators.required, Validators.min(10)]],
+      age: [this.userEdit.age, [Validators.required, Validators.min(11)]],
       email: [this.userEdit.email, [Validators.required, Validators.email]],
       gender: [this.userEdit.gender,Validators.required],
       position: [this.userEdit.position,Validators.required],
@@ -64,8 +64,6 @@ export class EditUserComponent implements OnInit {
       addresses: this.signupForm.value.addresses
     }
     this.userService.editUser(this.userEdit)
-    console.log(this.userEdit)
-    this.router.navigate([''])
   }
 
   get getAddressData() {

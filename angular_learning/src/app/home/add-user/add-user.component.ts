@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-user',
@@ -30,7 +31,7 @@ export class AddUserComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       id: [null, Validators.required],
       username: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
-      age: [null, [Validators.required, Validators.min(10)]],
+      age: [null, [Validators.required, Validators.min(11)]],
       email: [null, [Validators.required, Validators.email]],
       gender: [null ,Validators.required],
       position: [null,Validators.required],
@@ -51,9 +52,9 @@ export class AddUserComponent implements OnInit {
       addresses: this.signupForm.value.addresses
     }
     if(this.userService.addUser(this.userData) === 1){
-      this.router.navigate([''])
-    }
+      this.router.navigate(['']);
   }
+}
 
   get getAddressData() {
     return this.signupForm.get('addresses') as FormArray
