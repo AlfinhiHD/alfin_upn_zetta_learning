@@ -1,11 +1,11 @@
 <div class="container">
     <mat-card class="userlist-card">
-        <mat-card-title>{{ list.username }}</mat-card-title>
+        <mat-card-title>{{ list.username | titlecase }}</mat-card-title>
         <br>
         <p> User ID : {{ list.id }}</p>
         <mat-card-content>
-            <p>Gender : {{ list.gender }}</p>  
-            <p>Position : {{ list.position }}</p>
+            <p>{{ list.gender | uppercase}}</p>  
+            <p>{{ list.position | uppercase }}</p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button [routerLink]="['/detail-user']" [queryParams]="{id: list.id}">DETAIL</button>
