@@ -19,6 +19,7 @@ h1 {
 
 .errors {
     font-weight: bolder;
+    color: red;
 }
 
 button {
