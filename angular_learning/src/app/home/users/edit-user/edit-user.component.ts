@@ -41,19 +41,19 @@ export class EditUserComponent implements OnInit {
   })
 
     this.signupForm = new FormGroup({
-      'id': new FormControl(null, Validators.required),
-      'username': new FormControl(null, Validators.required),
-      'age': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'gender': new FormControl(null, Validators.required),
-      'position': new FormControl(null, Validators.required),
-      'maritalStatus': new FormControl(null, Validators.required),
+      'id': new FormControl(this.userEdit.id),
+      'username': new FormControl(this.userEdit.username, Validators.required),
+      'age': new FormControl(this.userEdit.age, Validators.required),
+      'email': new FormControl(this.userEdit.email, [Validators.required, Validators.email]),
+      'gender': new FormControl(this.userEdit.gender, Validators.required),
+      'position': new FormControl(this.userEdit.position, Validators.required),
+      'maritalStatus': new FormControl(this.userEdit.maritalStatus, Validators.required),
 
       'addresses': new FormGroup({
-        'address': new FormControl(null, Validators.required),
-        'zipcode': new FormControl(null, Validators.required),
-        'city': new FormControl(null, Validators.required),
-        'country': new FormControl(null, Validators.required),
+        'address': new FormControl(this.userEdit.address, Validators.required),
+        'zipcode': new FormControl(this.userEdit.zipcode, Validators.required),
+        'city': new FormControl(this.userEdit.city, Validators.required),
+        'country': new FormControl(this.userEdit.country, Validators.required),
       }),
     })
   }

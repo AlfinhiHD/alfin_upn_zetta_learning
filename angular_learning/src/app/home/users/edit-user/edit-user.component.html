@@ -7,6 +7,10 @@
             <mat-divider></mat-divider>
         <mat-form-field appearance="fill" class="form-group">
             <mat-icon matSuffix>account_circle</mat-icon>
+            <mat-label>ID</mat-label>
+            <input matInput type="text" placeholder="" formControlName="id" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-group">
             <mat-label>Change your Username</mat-label>
             <input matInput type="text" placeholder="Username" formControlName="username">
             <!-- <mat-error *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
