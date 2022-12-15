@@ -1,8 +1,3 @@
-<!-- <mat-tab-group>
-  <mat-tab label="Home"><a [routerLink]="['/home']"></a> </mat-tab>
-  <mat-tab label="Heroes!"><a [routerLink]="['/heroes']"></a> </mat-tab>
-</mat-tab-group> -->
-
 <nav mat-tab-nav-bar [tabPanel]="tabPanel">
   <a mat-tab-link *ngFor="let link of links"
      (click)="route(link)"
